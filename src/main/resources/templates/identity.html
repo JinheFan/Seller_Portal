@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Address</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" th:href="@{color.css}"/>
+</head>
+<body>
+<p th:text="Registration-Identity" class="regColor"></p>
+Email Address
+<div>
+    <a th:href="@{login.html}">Log out</a>
+</div>
+<br>
+<br>
+
+<form action="/identity" method="post">
+
+    <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'msg')?errors.msg:''):''}"></div>
+
+    <div class="identity-box">
+        Document type*:
+        <select name="documentType">
+            <option value="Identity card">Identity card</option>
+            <option value="Passport" selected>Passport</option>
+            <option value="Business license">Business license</option>
+        </select>
+        <br><br>
+        <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'documentType')?errors.documentType:''):''}">
+
+        </div>
+    </div>
+
+
+    <div class="identity-box">
+        Document number*:
+        <input type="text" name="documentNumber">
+        <br><br>
+        <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'documentNumber')?errors.documentNumber:''):''}">
+
+        </div>
+    </div>
+
+
+
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+    <br>
+    * Mandatory field
+</form>
+</body>

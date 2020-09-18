@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Address</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" th:href="@{color.css}"/>
+</head>
+<body>
+<p th:text="Registration-Address" class="regColor"></p>
+Email Address
+<div>
+    <a th:href="@{login.html}">Log out</a>
+</div>
+
+<br><br>
+<form action="/address" method="post">
+    <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'msg')?errors.msg:''):''}">
+
+    </div>
+    <div class="address-box">
+        Line 1*:
+        <input type="text" name="line1">
+        <br><br>
+        <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'line1')?errors.line1:''):''}">
+
+        </div>
+    </div>
+
+    <div class="address-box">
+        Line 2:
+        <input type="text" name="line2">
+        <br><br>
+        <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'line2')?errors.line2:''):''}">
+
+        </div>
+    </div>
+
+    <div class="address-box">
+        City*:
+        <input type="text" name="city">
+        <br><br>
+        <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'city')?errors.city:''):''}">
+
+        </div>
+    </div>
+
+    <div class="address-box">
+        Postcode*:
+        <input type="text" name="postCode">
+        <br><br>
+        <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'postCode')?errors.postCode:''):''}">
+
+        </div>
+    </div>
+
+    <div class="address-box">
+        Country*:
+        <select name="country">
+            <option value="China Mainland" selected>China Mainland</option>
+            <option value="France">France</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Philippines">Philippines</option>
+            <option value="Russia">Russia</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Spain">Spain</option>
+            <option value="Thailand">Thailand</option>
+            <option value="Turkey">Turkey</option>
+            <option value="Vietnam">Vietnam</option>
+        </select>
+        <br><br>
+        <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'country')?errors.country:''):''}">
+
+        </div>
+    </div>
+
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+<br>
+* Mandatory field
+</body>
+</html>

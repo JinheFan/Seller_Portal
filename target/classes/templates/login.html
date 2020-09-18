@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" th:href="@{color.css}"/>
+</head>
+<body>
+<p th:text="Login" class="regColor"></p>
+<br><br>
+<form action="/authenticate" method="post">
+    <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'msg')?errors.msg:''):''}">
+
+    </div>
+    <div class="login-box">
+        Email address*:
+        <input type="text" name="email">
+        <br><br>
+        <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'email')?errors.email:''):''}">
+
+        </div>
+    </div>
+
+    <div class="login-box">
+        Password*:
+        <input type="text" name="password">
+        <br><br>
+        <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'password')?errors.password:''):''}">
+
+        </div>
+    </div>
+    <div>
+        <button type="submit">Login</button>
+    </div>
+</form>
+<br>
+Don't have an account yet? <a th:href="@{registration.html}">Click here to register</a>
+</body>
+</html>

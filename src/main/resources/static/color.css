@@ -1,0 +1,12 @@
+.regColor{
+    font-style: italic;
+    color: blue;
+}
+.logColor{
+    font-style: italic;
+    color: red;
+}
+
+.borderStyle{
+    border: 1px solid black;
+}

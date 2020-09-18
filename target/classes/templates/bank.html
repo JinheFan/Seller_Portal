@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Address</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" th:href="@{color.css}"/>
+</head>
+<body>
+<p th:text="Registration-Bank" class="regColor"></p>
+Email Address
+<div>
+    <a th:href="@{login.html}">Log out</a>
+</div>
+<br>
+<br>
+
+<form action="/bank" method="post">
+
+    <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'msg')?errors.msg:''):''}"></div>
+
+
+    <div class="bank-box">
+        Account name*:
+        <input type="text" name="accountName">
+        <br><br>
+        <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'accountName')?errors.accountName:''):''}">
+
+        </div>
+    </div>
+
+    <div class="bank-box">
+        Account number*:
+        <input type="text" name="accountNumber">
+        <br><br>
+        <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'accountNumber')?errors.accountNumber:''):''}">
+
+        </div>
+    </div>
+
+    <div class="bank-box">
+        Bank name*:
+        <input type="text" name="bankName">
+        <br><br>
+        <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'bankName')?errors.bankName:''):''}">
+
+        </div>
+    </div>
+
+    <div class="bank-box">
+        SWIFT code*:
+        <input type="text" name="code">
+        <br><br>
+        <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'code')?errors.code:''):''}">
+
+        </div>
+    </div>
+
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+    <br>
+    * Mandatory field
+</form>
+</body>

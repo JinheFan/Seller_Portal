@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Registration</title>
+    <link rel="stylesheet" th:href="@{color.css}"/>
+    <script type="text/javascript">
+        function regist() {
+            if(errors==null) {
+                alert("register success")
+            }
+        }
+        regist();
+    </script>
+</head>
+<body>
+    <p th:text="Registration" class="regColor"></p>
+    <br><br>
+    <form action="/save" method="POST">
+
+        <div class="register-box">
+            Account type*:<input name="accoutType" type="radio" value="0" checked>Individual
+            <input type="radio" name="accountType" value="1">Corporate
+            <br><br>
+            <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'accountType')?errors.accountType:''):''}">
+
+            </div>
+        </div>
+        <div class="register-box">
+            Shop based in*:
+            <select name="shopBased">
+                <option value="China Mainland" selected>China Mainland</option>
+                <option value="France">France</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="Philippines">Philippines</option>
+                <option value="Russia">Russia</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Spain">Spain</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Vietnam">Vietnam</option>
+            </select>
+            <br><br>
+            <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'shopBased')?errors.shopBased:''):''}">
+
+            </div>
+        </div>
+        <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'msg')?errors.msg:''):''}">
+
+        </div>
+
+        <div class="register-box">
+            Mobile number*:
+            <input type="text" name="mobileNumber">
+            <br><br>
+            <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'mobileNumber')?errors.mobileNumber:''):''}">
+
+            </div>
+        </div>
+        <div class="register-box">
+            Email address*:
+            <label class="other_label">
+                <input type="text" name="email">
+            </label>
+            <br><br>
+            <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'email')?errors.email:''):''}">
+
+            </div>
+        </div>
+        <div class="register-box">
+            Password*:
+            <input type="text" name="password">
+            <br><br>
+            <div class="tips" style="color: red" th:text="${errors!=null?(#maps.containsKey(errors,'password')?errors.password:''):''}">
+
+            </div>
+        </div>
+        <div>
+            <button type="submit" th:href="@{login.html}" onclick="regist()">Submit</button>
+        </div>
+    </form>
+    <br>
+* Mandatory field
+
+
+</body>
+
+</html>

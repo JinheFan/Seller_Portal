@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" th:href="@{color.css}"/>
+</head>
+<body>
+<p th:text="Dashboard" class="regColor"></p>
+<br><br>
+Email Address
+<div>
+    <a th:href="@{login.html}">Log out</a>
+</div>
+<br>
+<br>
+
+<div class="borderStyle">
+    Complete your registration
+    <br><br>
+    Step 1 <a th:href="@{address.html}">Address</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Step 2 <a th:href="@{identity.html}">Identity</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Step 3 <a th:href="@{bank.html}">Bank account</a>
+</div>
+
+</body>
+</html>
